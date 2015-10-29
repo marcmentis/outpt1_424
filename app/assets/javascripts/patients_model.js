@@ -2,8 +2,8 @@ function pat_on_opening (facility) {
 	//After populating 'facility' select, make sure 'ward' select populated before
 		// running 'complex_search'
 	$('#slt_S_facility').val(''+facility+'');
-	$('#slt_S_ward').mjm_addOptions('ward', {
-							firstLine: 'All Wards', 
+	$('#slt_S_site').mjm_addOptions('site', {
+							firstLine: 'All Sites', 
 							facility: facility, 
 							group: true,
 							complete: function(){
@@ -17,10 +17,10 @@ function complex_search1 (){
 	var lastname = $('#ftx_S_lastname').val();
 	var number = $('#ftx_S_number').val();
 	var facility = $('#slt_S_facility').val();
-	var ward = $('#slt_S_ward').val();
+	var site = $('#slt_S_site').val();
 
 	// $("#gridGrid").remove();         
-	url = '/patients_search?firstname='+firstname+'&lastname='+lastname+'&identifier='+number+'&facility='+facility+'&site='+ward+''
+	url = '/patients_search?firstname='+firstname+'&lastname='+lastname+'&identifier='+number+'&facility='+facility+'&site='+site+''
 	refreshgrid(url);	
 };
 
@@ -88,18 +88,18 @@ function refreshgrid(url){
 						$('#txt_Pat_number').val(data.identifier);
 						$('#slt_F_facility').val(data.facility);	
 						if ($('#session-admin3').val() == 'true') {
-							// IF ADMIN-3 - need to first populate slt_F_ward as table can include any facililty
-							$('#slt_F_ward').mjm_addOptions('ward', {
-								firstLine: 'All Wards', 
+							// IF ADMIN-3 - need to first populate slt_F_site as table can include any facililty
+							$('#slt_F_site').mjm_addOptions('site', {
+								firstLine: 'All Sites', 
 								facility: data.facility,
 								complete: function(){
-									$('#slt_F_ward').val(data.site);
+									$('#slt_F_site').val(data.site);
 							}
 						});
 						}else {
-							//If not ADMIN-3, can populate slt_F_ward with session-facility in begining and so
+							//If not ADMIN-3, can populate slt_F_site with session-facility in begining and so
 								//just choose the ward here.
-							$('#slt_F_ward').val(data.site);	
+							$('#slt_F_site').val(data.site);	
 						};
 						// $('#dt_Pat_DOA').val(data.doa)
 						$('#dt_Pat_DOA').val(moment(data.doa,"YYYY-MM-DD").format('YYYY-MM-DD'));
@@ -182,13 +182,13 @@ function clearFields(){
 	if ($('#session-admin3').val() == 'true') {
 		$('#slt_F_facility').val('-1')
 		//ward must have no values
-		$('#slt_F_ward').mjm_addOptions('ward', {
-							firstLine: 'All Wards', 
+		$('#slt_F_site').mjm_addOptions('site', {
+							firstLine: 'All Sites', 
 							facility: '-1', 
 							group: true,
 							});
 	}else {
-		$('#slt_F_ward').val('-1')
+		$('#slt_F_site').val('-1')
 	};
 };
 
@@ -197,7 +197,7 @@ function patients_ajax1 (url, type) {
 	// var lastname = $('#lastname').val();
 	// var number = $('#number').val();
 	// var facility = $('#slt_F_facility').val();
-	// var ward = $('#slt_F_ward').val();
+	// var ward = $('#slt_F_site').val();
 
 	var params_string = $('#fPatientAsideRt').serialize();
 	params_string_replace = params_string.replace(/&/g,',')

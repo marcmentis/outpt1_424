@@ -9,7 +9,7 @@
 # *****  User  **************************
 # User make sure pgmdmjm in database
 User.find_or_initialize_by(authen: 'pgmdmjm').update_attributes(firstname: 'Marc', lastname: 'Mentis', authen: 'pgmdmjm', facility: '0013', email: 'marc.mentis@omh.ny.gov', firstinitial: 'M', middleinitial: 'J')
-
+Role.find_or_initialize_by(id: '10000').update_attributes(id: '10000', name: 'admin3', created_at: '19-OCT-15', updated_at: '19-OCT-15')
 
 # *****  ForSelect  *********************
 # FOR ALL HOSPITALS
@@ -59,62 +59,27 @@ ForSelect.find_or_initialize_by(value: 'r_and_d').update_attributes(facility: '9
 ForSelect.find_or_initialize_by(value: 'Y').update_attributes(facility: '9999', code: 'YesNo', value: 'Y', text: 'Yes', option_order: 1, grouper: '')
 ForSelect.find_or_initialize_by(value: 'N').update_attributes(facility: '9999', code: 'YesNo', value: 'N', text: 'No', option_order: 2, grouper: '')
 
-#AllLatest
-ForSelect.find_or_initialize_by(value: 'All').update_attributes(facility: '9999', code: 'AllLatest', value: 'All', text: 'All', option_order: 1, grouper: '')
-ForSelect.find_or_initialize_by(value: 'Latest').update_attributes(facility: '9999', code: 'AllLatest', value: 'Latest', text: 'Latest', option_order: 2, grouper: '')
-
-#MxTracker
-ForSelect.find_or_initialize_by(value: 'MedChange').update_attributes(facility: '9999', code: 'MxTracker', value: 'MedChange', text: 'MedChange', option_order: 1, grouper: '')
-ForSelect.find_or_initialize_by(value: 'MedNoChange').update_attributes(facility: '9999', code: 'MxTracker', value: 'MedNoChange', text: 'MedNoChange', option_order: 2, grouper: '')
-ForSelect.find_or_initialize_by(value: 'GroupChange').update_attributes(facility: '9999', code: 'MxTracker', value: 'GroupChange', text: 'GroupChange', option_order: 3, grouper: '')
-ForSelect.find_or_initialize_by(value: 'GroupNoChange').update_attributes(facility: '9999', code: 'MxTracker', value: 'GroupNoChange', text: 'GroupNoChange', option_order: 4, grouper: '')
-ForSelect.find_or_initialize_by(value: 'PreNoDate').update_attributes(facility: '9999', code: 'MxTracker', value: 'PreNoDate', text: 'PreNoDate', option_order: 5, grouper: '')
-
-# Bio-Psycho-Social Mx Assessment
-ForSelect.find_or_initialize_by(value: '0-8Weeks').update_attributes(facility: '9999', code: 'DrugsChanged', value: '0-8Weeks', text: '0-8Weeks', option_order: 1, grouper: '')
-ForSelect.find_or_initialize_by(value: 'Gt8Weeks').update_attributes(facility: '9999', code: 'DrugsChanged', value: 'Gt8Weeks', text: 'Gt8Weeks', option_order: 2, grouper: '')
-ForSelect.find_or_initialize_by(value: '0-3Months').update_attributes(facility: '9999', code: 'GroupsChanged', value: '0-3Months', text: '0-3Months', option_order: 1, grouper: '')
-ForSelect.find_or_initialize_by(value: 'Gt3Months').update_attributes(facility: '9999', code: 'GroupsChanged', value: 'Gt3Months', text: 'Gt3Months', option_order: 2, grouper: '')
-
 
 # *****************************************
 # SPECIFIC TO HOSPITALS
-# Pilgrim Ward Names
-ForSelect.find_or_initialize_by(value: '81/101').update_attributes(facility: '0013', code: 'ward', value: '81/101', text: '81/101', option_order: 1, grouper: 'bld81')
-ForSelect.find_or_initialize_by(value: '81/102').update_attributes(facility: '0013', code: 'ward', value: '81/102', text: '81/102', option_order: 2, grouper: 'bld81')
-ForSelect.find_or_initialize_by(value: '81/201').update_attributes(facility: '0013', code: 'ward', value: '81/201', text: '81/201', option_order: 3, grouper: 'bld81')
-ForSelect.find_or_initialize_by(value: '81/202').update_attributes(facility: '0013', code: 'ward', value: '81/202', text: '81/202', option_order: 4, grouper: 'bld81')
-ForSelect.find_or_initialize_by(value: '81/301').update_attributes(facility: '0013', code: 'ward', value: '81/301', text: '81/301', option_order: 5, grouper: 'bld81')
-ForSelect.find_or_initialize_by(value: '81/302').update_attributes(facility: '0013', code: 'ward', value: '81/302', text: '81/302', option_order: 6, grouper: 'bld81')
-ForSelect.find_or_initialize_by(value: '81/401').update_attributes(facility: '0013', code: 'ward', value: '81/401', text: '81/401', option_order: 7, grouper: 'bld81')
-ForSelect.find_or_initialize_by(value: '81/402').update_attributes(facility: '0013', code: 'ward', value: '81/402', text: '81/402', option_order: 8, grouper: 'bld81')
-ForSelect.find_or_initialize_by(value: '81/501').update_attributes(facility: '0013', code: 'ward', value: '81/501', text: '81/501', option_order: 9, grouper: 'bld81')
-ForSelect.find_or_initialize_by(value: '81/502').update_attributes(facility: '0013', code: 'ward', value: '81/502', text: '81/502', option_order: 10, grouper: 'bld81')
-ForSelect.find_or_initialize_by(value: '81/601').update_attributes(facility: '0013', code: 'ward', value: '81/601', text: '81/601', option_order: 11, grouper: 'bld81')
-ForSelect.find_or_initialize_by(value: '81/602').update_attributes(facility: '0013', code: 'ward', value: '81/602', text: '81/602', option_order: 12, grouper: 'bld81')
-ForSelect.find_or_initialize_by(value: '82/203').update_attributes(facility: '0013', code: 'ward', value: '82/203', text: '82/203', option_order: 13, grouper: 'bld82')
-ForSelect.find_or_initialize_by(value: '82/204').update_attributes(facility: '0013', code: 'ward', value: '82/204', text: '82/204', option_order: 14, grouper: 'bld82')
-ForSelect.find_or_initialize_by(value: '82/303').update_attributes(facility: '0013', code: 'ward', value: '82/303', text: '82/303', option_order: 15, grouper: 'bld82')
-ForSelect.find_or_initialize_by(value: '82/304').update_attributes(facility: '0013', code: 'ward', value: '82/304', text: '82/304', option_order: 16, grouper: 'bld82')
-ForSelect.find_or_initialize_by(value: '82/403').update_attributes(facility: '0013', code: 'ward', value: '82/403', text: '82/403', option_order: 17, grouper: 'bld82')
-ForSelect.find_or_initialize_by(value: '82/404').update_attributes(facility: '0013', code: 'ward', value: '82/404', text: '82/404', option_order: 18, grouper: 'bld82')
-ForSelect.find_or_initialize_by(value: '82/503').update_attributes(facility: '0013', code: 'ward', value: '82/503', text: '82/503', option_order: 19, grouper: 'bld82')
-ForSelect.find_or_initialize_by(value: '82/504').update_attributes(facility: '0013', code: 'ward', value: '82/504', text: '82/504', option_order: 20, grouper: 'bld82')
-ForSelect.find_or_initialize_by(value: '82/604').update_attributes(facility: '0013', code: 'ward', value: '82/604', text: '82/604', option_order: 21, grouper: 'bld82')
-ForSelect.find_or_initialize_by(value: '25/2N').update_attributes(facility: '0013', code: 'ward', value: '25/2N', text: '25/2N', option_order: 22, grouper: 'bld25')
-ForSelect.find_or_initialize_by(value: '25/2S').update_attributes(facility: '0013', code: 'ward', value: '25/2S', text: '25/2S', option_order: 23, grouper: 'bld25')
-ForSelect.find_or_initialize_by(value: '25/3N').update_attributes(facility: '0013', code: 'ward', value: '25/3N', text: '25/3N', option_order: 24, grouper: 'bld25')
-ForSelect.find_or_initialize_by(value: '25/3S').update_attributes(facility: '0013', code: 'ward', value: '25/3S', text: '25/3S', option_order: 25, grouper: 'bld25')
-ForSelect.find_or_initialize_by(value: '25/4N').update_attributes(facility: '0013', code: 'ward', value: '25/4N', text: '25/4N', option_order: 26, grouper: 'bld25')
-ForSelect.find_or_initialize_by(value: '25/4S').update_attributes(facility: '0013', code: 'ward', value: '25/4S', text: '25/4S', option_order: 27, grouper: 'bld25')
-ForSelect.find_or_initialize_by(value: '25/5N').update_attributes(facility: '0013', code: 'ward', value: '25/5N', text: '25/5N', option_order: 28, grouper: 'bld25')
-ForSelect.find_or_initialize_by(value: '25/5S').update_attributes(facility: '0013', code: 'ward', value: '25/5S', text: '25/5S', option_order: 29, grouper: 'bld25')
-ForSelect.find_or_initialize_by(value: 'd/c').update_attributes(facility: '0013', code: 'ward', value: 'd/c', text: 'd/c', option_order: 30, grouper: 'd/c')
+# Pilgrim Clinic Names
+ForSelect.find_or_initialize_by(value: 'Buckman').update_attributes(facility: '0013', code: 'site', value: 'Buckman', text: 'Buckman', option_order: 1, grouper: 'Pilgrim')
+ForSelect.find_or_initialize_by(value: 'Peconic').update_attributes(facility: '0013', code: 'site', value: 'Peconic', text: 'Peconic', option_order: 2, grouper: 'Pilgrim')
+ForSelect.find_or_initialize_by(value: 'WSuffolk').update_attributes(facility: '0013', code: 'site', value: 'WSuffolk', text: 'WSuffolk', option_order: 3, grouper: 'Pilgrim')
+ForSelect.find_or_initialize_by(value: 'Yaphank').update_attributes(facility: '0013', code: 'site', value: 'Yaphank', text: 'Yaphank', option_order: 4, grouper: 'Pilgrim')
+ForSelect.find_or_initialize_by(text: 'd/c.').update_attributes(facility: '0013', code: 'site', value: 'd/c', text: 'd/c.', option_order: 5, grouper: 'd/c')
 
-# Sagamore Ward Names
-ForSelect.find_or_initialize_by(value: 'E-unit').update_attributes(facility: '0025', code: 'ward', value: 'E-unit', text: 'E-unit', option_order: 1, grouper: 'scpc')
-ForSelect.find_or_initialize_by(value: 'F-unit').update_attributes(facility: '0025', code: 'ward', value: 'F-unit', text: 'F-unit', option_order: 2, grouper: 'scpc')
-ForSelect.find_or_initialize_by(value: 'G-unit').update_attributes(facility: '0025', code: 'ward', value: 'G-unit', text: 'G-unit', option_order: 3, grouper: 'scpc')
+# Sagamore Clinic Names
+ForSelect.find_or_initialize_by(value: 'BellportDT').update_attributes(facility: '0025', code: 'site', value: 'BellportDT', text: 'BellportDT', option_order: 1, grouper: 'scpc')
+ForSelect.find_or_initialize_by(value: 'CrisisRespite').update_attributes(facility: '0025', code: 'site', value: 'CrisisRespite', text: 'CrisisRespite', option_order: 2, grouper: 'scpc')
+ForSelect.find_or_initialize_by(value: 'IntensiveDT').update_attributes(facility: '0025', code: 'site', value: 'IntensiveDT', text: 'IntensiveDT', option_order: 3, grouper: 'scpc')
+ForSelect.find_or_initialize_by(value: 'MIT').update_attributes(facility: '0025', code: 'site', value: 'MIT', text: 'MIT', option_order: 4, grouper: 'scpc')
+ForSelect.find_or_initialize_by(value: 'NBabylonDT').update_attributes(facility: '0025', code: 'site', value: 'NBabylonDT', text: 'NBabylonDT', option_order: 5, grouper: 'scpc')
+ForSelect.find_or_initialize_by(value: 'SayvilleDT').update_attributes(facility: '0025', code: 'site', value: 'SayvilleDT', text: 'SayvilleDT', option_order: 6, grouper: 'scpc')
+ForSelect.find_or_initialize_by(value: 'WantaghDT').update_attributes(facility: '0025', code: 'site', value: 'WantaghDT', text: 'WantaghDT', option_order: 7, grouper: 'scpc')
+ForSelect.find_or_initialize_by(value: 'WaverlyClinic').update_attributes(facility: '0025', code: 'site', value: 'WaverlyClinic', text: 'WaverlyClinic', option_order: 8, grouper: 'scpc')
+ForSelect.find_or_initialize_by(value: 'WaverlySatellite').update_attributes(facility: '0025', code: 'site', value: 'WaverlySatellite', text: 'WaverlySatellite', option_order: 9, grouper: 'scpc')
+ForSelect.find_or_initialize_by(value: 'd/c').update_attributes(facility: '0025', code: 'site', value: 'd/c', text: 'd/c', option_order: 10, grouper: 'd/c')
 
 
 

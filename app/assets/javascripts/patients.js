@@ -54,11 +54,11 @@ if ($('body.patients').length) {
 		// Show appropriate wards in
 		$('#slt_S_facility').change(function(){
 			var chosen_facility = $('#slt_S_facility').val();
-			$('#slt_S_ward').mjm_addOptions('ward', {firstLine: 'All Wards', facility: chosen_facility, group: true})
+			$('#slt_S_site').mjm_addOptions('site', {firstLine: 'All Sites', facility: chosen_facility, group: true})
 		});
 		$('#slt_F_facility').change(function(){
 			var chosen_facility = $('#slt_F_facility').val();
-			$('#slt_F_ward').mjm_addOptions('ward', {firstLine: 'All Wards', facility: chosen_facility, group: true})
+			$('#slt_F_site').mjm_addOptions('site', {firstLine: 'All Sites', facility: chosen_facility, group: true})
 		});
 
 		// Filter when Facility changed
@@ -67,7 +67,7 @@ if ($('body.patients').length) {
 		});
 
 		//Filter when ward changed
-		$('#slt_S_ward').change(function(e){
+		$('#slt_S_site').change(function(e){
 			complex_search1();
 		});
 
@@ -103,7 +103,7 @@ if ($('body.patients').length) {
 	 				['txt_Pat_lastname','','Please enter Last Name'],
 	 				['txt_Pat_number','','Please enter Number'],
 	 				['slt_F_facility','-1','Please choose Facility'],
-	 				['slt_F_ward','-1','Please choose Ward'],
+	 				['slt_F_site','-1','Please choose Ward'],
 	 				['dt_Pat_DOA','','Please choose DOA']
 	 			]
 
@@ -145,15 +145,14 @@ if ($('body.patients').length) {
 		$('#slt_F_facility').mjm_addOptions('facility', {
 											firstLine: 'All Facilities', 
 											complete: function(){
-												$('#slt_F_ward').mjm_addOptions('ward', {
-													firstLine: 'All Wards', 
+												$('#slt_F_site').mjm_addOptions('site', {
+													firstLine: 'All Sites', 
 													facility: facility, 
 													group: true
 													});
 											}
 										})
-
-		// $('#slt_S_ward').mjm_addOptions('ward', {firstLine: 'All Wards', facility: '-1', group: true})
+		
 	} else { 
 		facility = $('#session-facility').val();
 		//Make sure 'facility' and 'ward' selects are populated before running 'complex_search1'
@@ -167,8 +166,8 @@ if ($('body.patients').length) {
 											firstLine: 'All Facilities', 
 											complete: function(){
 												$('slt_F_facility').val(''+facility+'');
-												$('#slt_F_ward').mjm_addOptions('ward', {
-													firstLine: 'All Wards', 
+												$('#slt_F_site').mjm_addOptions('site', {
+													firstLine: 'All Sites', 
 													facility: facility, 
 													group: true,
 													complete: function(){
@@ -178,7 +177,6 @@ if ($('body.patients').length) {
 
 											}
 										})
-		// $('#slt_S_ward, #slt_F_ward').mjm_addOptions('ward', {firstLine: 'All Wards', facility: facility, group: true})
 	};
 
 
