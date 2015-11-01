@@ -51,7 +51,7 @@ if ($('body.patients').length) {
 		};
 
 
-		// Show appropriate wards in
+		// Show appropriate sites in
 		$('#slt_S_facility').change(function(){
 			var chosen_facility = $('#slt_S_facility').val();
 			$('#slt_S_site').mjm_addOptions('site', {firstLine: 'All Sites', facility: chosen_facility, group: true})
