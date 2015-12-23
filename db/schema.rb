@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20150501225242) do
     t.string   "value"
     t.string   "text"
     t.string   "grouper"
-    t.integer  "option_order"
+    t.integer  "option_order", precision: 38
     t.string   "facility"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 20150501225242) do
     t.string   "identifier"
     t.string   "facility"
     t.string   "site"
-    t.date     "doa"
-    t.date     "dob"
-    t.date     "dod"
+    t.datetime "doa"
+    t.datetime "dob"
+    t.datetime "dod"
     t.string   "updated_by"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20150501225242) do
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
-    t.integer  "resource_id"
+    t.integer  "resource_id",   precision: 38
     t.string   "resource_type"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -78,8 +78,8 @@ ActiveRecord::Schema.define(version: 20150501225242) do
   add_index "users", ["facility"], name: "index_users_on_facility"
 
   create_table "users_roles", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "role_id"
+    t.integer "user_id", precision: 38
+    t.integer "role_id", precision: 38
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "roles_userid_roleid"
